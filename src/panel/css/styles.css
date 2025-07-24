@@ -1,0 +1,145 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  paddding: 0;
+}
+
+body {
+  background-color: #e6ffd9;
+  font-family: sans-serif;
+}
+
+main {
+  margin: 0 auto;
+  width: 80%;
+}
+
+h1 {
+  padding: 5px;
+  text-align: center;
+  color: darkgray;
+  background-color: #052b0f;
+}
+
+.db-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.db-table th {
+  padding: 10px;
+  background-color: #269e46;
+}
+
+.db-table td {
+  padding: 5px;
+}
+
+.db-table tr:nth-child(even) {
+  background-color: #b2d0ba;
+}
+
+.db-table tr:nth-child(odd) {
+  background-color: white;
+}
+
+nav {
+  background-color: #269e46;
+  padding: 10px 20px;
+  display: flex;
+  gap: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  justify-content: center;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  text-transform: uppercase;
+}
+
+nav a:hover {
+  background-color: #1f7e38;
+}
+
+nav a:active {
+  background-color: #145428;
+}
+
+.input-container {
+  width: 40%;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #269e46;
+}
+
+.input-container button {
+  background-color: #269e46;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.input-container button:hover {
+  background-color: #1f7e38;
+}
+
+.input-container label {
+  color: white;
+  font-weight: bold;
+}
+
+#addressForm {
+  margin: 0 auto;
+  max-width: 400px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#addressForm label {
+  font-weight: bold;
+}
+
+#addressForm input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#addressForm button {
+  padding: 10px;
+  background-color: #269e46;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#addressForm button:hover {
+  background-color: #1f7e38;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+}

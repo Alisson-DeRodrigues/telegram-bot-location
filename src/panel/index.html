@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Consulta PostgreSQL</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">Buscar todos</a>
+      <a href="searchAddress.html">Buscar por ID</a>
+      <a href="newAddress.html">Novo endereço</a>
+    </nav>
+    
+    <main>
+      <h1>Busca por todos os endereços</h1>
+      <table class="db-table" border="1" id="tabela">
+        <thead>
+          <tr id="cabecalho"></tr>
+        </thead>
+        <tbody id="corpo"></tbody>
+      </table>
+    </main>
+    <script>
+      fetch(
+        "https://caa5a41c-aa98-4061-9278-71ca88572627-00-9deips6oh8j.picard.replit.dev:3000/address",
+      )
+        .then((res) => res.json())
+        .then((dados) => {
+          const cabecalho = document.getElementById("cabecalho");
+          const corpo = document.getElementById("corpo");
+
+          if (dados.length > 0) {
+            // Cria cabeçalho
+            Object.keys(dados[0]).forEach((key) => {
+              const th = document.createElement("th");
+              th.textContent = key;
+              cabecalho.appendChild(th);
+            });
+
+            // Preenche linhas
+            dados.forEach((linha) => {
+              const tr = document.createElement("tr");
+              Object.values(linha).forEach((valor) => {
+                const td = document.createElement("td");
+                td.textContent = valor;
+                tr.appendChild(td);
+              });
+              corpo.appendChild(tr);
+            });
+          }
+        })
+        .catch((err) => console.error("Erro ao buscar dados:", err));
+    </script>
+  </body>
+</html>

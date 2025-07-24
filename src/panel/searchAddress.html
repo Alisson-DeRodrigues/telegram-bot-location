@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Consulta por ID</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">Buscar todos</a>
+      <a href="searchAddress.html">Buscar por ID</a>
+      <a href="newAddress.html">Novo endereço</a>
+    </nav>
+
+    <main>
+      <div class="input-container">
+        <label for="idInput">Digite o ID:</label>
+        <input type="number" id="idInput" placeholder="Ex: 1" />
+        <button onclick="buscarPorId()">Buscar</button>
+      </div>
+      
+      <h1>Buscar endereço por ID</h1>
+  
+      <table class="db-table" border="1" id="tabela">
+        <thead>
+          <tr id="cabecalho"></tr>
+        </thead>
+        <tbody id="corpo"></tbody>
+      </table>
+    </main>
+
+    <script>
+      function limparTabela() {
+        document.getElementById("cabecalho").innerHTML = "";
+        document.getElementById("corpo").innerHTML = "";
+      }
+
+      function preencherTabela(dados) {
+        const cabecalho = document.getElementById("cabecalho");
+        const corpo = document.getElementById("corpo");
+
+        if (dados) {
+          // Se for um único objeto, transforma em array com 1 item
+          const registros = Array.isArray(dados) ? dados : [dados];
+
+          // Cria cabeçalho
+          Object.keys(registros[0]).forEach((key) => {
+            const th = document.createElement("th");
+            th.textContent = key;
+            cabecalho.appendChild(th);
+          });
+
+          // Preenche linhas
+          registros.forEach((linha) => {
+            const tr = document.createElement("tr");
+            Object.values(linha).forEach((valor) => {
+              const td = document.createElement("td");
+              td.textContent = valor;
+              tr.appendChild(td);
+            });
+            corpo.appendChild(tr);
+          });
+        }
+      }
+
+      function buscarPorId() {
+        const id = document.getElementById("idInput").value.trim();
+        if (!id) {
+          alert("Por favor, digite um ID.");
+          return;
+        }
+
+        const url = `https://caa5a41c-aa98-4061-9278-71ca88572627-00-9deips6oh8j.picard.replit.dev:3000/address/${id}`;
+        limparTabela();
+
+        fetch(url)
+          .then((res) => {
+            if (!res.ok) throw new Error("Endereço não encontrado.");
+            return res.json();
+          })
+          .then((dados) => {
+            preencherTabela(dados);
+          })
+          .catch((err) => {
+            alert("Erro ao buscar o endereço: " + err.message);
+            console.error(err);
+          });
+      }
+    </script>
+  </body>
+</html>
