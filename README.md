@@ -79,10 +79,8 @@ OBS: Os endpoints podem ser utilizados sem a interface do painel, por exemplo, p
 ```
 
 ### Cuidados para o desenvolvimento no seu próprio ambiente
-**Altere os links da aplicação replit em:**
+**Altere o link da aplicação replit em:**
 - .env ou na interface de configuração de variáveis ambiente do replit (Secrets)
-
-OBS: Não esqueça de indicar o número da porta (3000) no link replit nos arquivos html.
 
 **Altere o Token do Bot Telegram em:**
 - .env ou na interface de configuração de variáveis ambiente do replit (Secrets)
