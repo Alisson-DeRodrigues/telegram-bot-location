@@ -21,11 +21,6 @@ DATABASE_URL="neon-postgresql-url"
 PORT="3000"
 ```
 
-**Alterando os links para o seu próprio link replit em:**
-- index.html
-- newAddress.html
-- searchAddress.html
-
 **Iniciando o servidor:**
 - clique em `Run`
 
@@ -86,9 +81,6 @@ OBS: Os endpoints podem ser utilizados sem a interface do painel, por exemplo, p
 ### Cuidados para o desenvolvimento no seu próprio ambiente
 **Altere os links da aplicação replit em:**
 - .env ou na interface de configuração de variáveis ambiente do replit (Secrets)
-- index.html
-- newAddress.html
-- searchAddress.html
 
 OBS: Não esqueça de indicar o número da porta (3000) no link replit nos arquivos html.
 
@@ -97,6 +89,3 @@ OBS: Não esqueça de indicar o número da porta (3000) no link replit nos arqui
 
 **Altere o Token para se conectar ao banco de dados PostgreSQL Neon em:**
 - .env ou na interface de configuração de variáveis ambiente do replit (Secrets)
-
-**Outros cuidados:**
-- o replit utliza portas diferentes para o painel html e para escutar as solicitações do bot, se estiver tendo problemas de execução relacionados com a porta, reinicie a aplicação com `kill 1`
