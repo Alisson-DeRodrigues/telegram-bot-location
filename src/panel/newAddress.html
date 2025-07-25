@@ -53,8 +53,9 @@
         };
 
         try {
+          const baseUrl = window.location.origin;
           const response = await fetch(
-            "https://caa5a41c-aa98-4061-9278-71ca88572627-00-9deips6oh8j.picard.replit.dev:3000/address",
+            `${baseUrl}/address`,
             {
               method: "POST",
               headers: {
