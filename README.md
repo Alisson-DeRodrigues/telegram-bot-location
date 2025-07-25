@@ -13,14 +13,27 @@ Um bot telegram para registrar pedidos de atualização de endereços.
 - api para salvar os dados no banco de dados PostgreSQL hospedado no Neon
 
 ## Início Rápido
+**Configurando o .env:**
+```
+BOT_TOKEN="your-bot-token"
+URL="https://your-url.replit.dev/"
+DATABASE_URL="neon-postgresql-url"
+PORT="3000"
+```
+
+**Alterando os links para o seu próprio link replit em:**
+- index.html
+- newAddress.html
+- searchAddress.html
+
 **Iniciando o servidor:**
-- clique em run
+- clique em `Run`
 
 **Acessando o bot:**
-- acesso o bot Telegram @ChangeAddressBot
+- acesse o seu bot Telegram e envie `/start`
 
 **Acessando o painel HTML**
-- https://caa5a41c-aa98-4061-9278-71ca88572627-00-9deips6oh8j.picard.replit.dev:3000/
+- https://your-url.replit.dev:3000/
 
 OBS: O bot pode demorar alguns segundos para iniciar depois de um período de inatividade, aguarde. Também verifique se o menu de comandos do bot não está tampando a mensagem inicial do bot.
 
